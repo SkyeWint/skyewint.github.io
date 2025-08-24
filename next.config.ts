@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  basePath: "/skyfoxcoaching",
-  output: "export",
+  basePath: '/skyewint.github.io',
+  output: 'export',
   reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
