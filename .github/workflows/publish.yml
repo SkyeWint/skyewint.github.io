@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -33,7 +33,13 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npx next build
 
-      - name: Upload artifact 📡
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "_site/" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+
+      - name: Upload Pages artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
