@@ -33,19 +33,13 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npx next build
 
-      - name: Fix permissions
-        run: |
-          chmod -c -R +rX "_site/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-
       - name: Create build folder
-        run: mkdir -p "build"
+        run: mkdir -p "out"
 
       - name: Upload Pages artifact 📡
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./build
+          path: ./out
 
   deploy:
     environment:
