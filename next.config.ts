@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  basePath: '/skyewint.github.io',
+  basePath: '',
   output: 'export',
   reactStrictMode: true,
 };
