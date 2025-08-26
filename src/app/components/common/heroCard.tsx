@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import BowSvg from '../../images/BowSvg';
 
@@ -17,7 +16,7 @@ const HeroCard = ({ href, imgUrl, text, pink = false }: HereCardProps) => (
           pink ? 'hue-rotate-300' : 'hue-rotate-160'
         } saturate-60 contrast-95 opacity-80`}
       >
-        <Image className="sepia" alt="" src={imgUrl} width={360} height={360} />
+        <img className="sepia" alt="" src={imgUrl} width={360} height={360} />
       </div>
 
       <BowSvg className="m-auto scale-y-70 fill-sky-900" width={300} />
