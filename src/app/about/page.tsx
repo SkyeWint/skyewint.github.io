@@ -3,7 +3,7 @@ import { blue, pink } from '../utils/colors';
 const About = () => {
   return (
     <div
-      className={`flex flex-col justify-center justify-items-center text-justify ${pink}`}
+      className={`flex flex-col justify-center justify-items-center text-justify`}
     >
       <section className={`w-full flex justify-center p-8 ${blue}`}>
         <div className="w-3xl flex flex-col">
@@ -55,7 +55,7 @@ const About = () => {
 
           <p className="text-xl tracking-wide pb-4">
             I provide substantial professional and volunteered experience
-            working with LGBTQIA+ and Neurodiverse people, particularly those
+            working with LGBTQIA+ and neurodiverse people, particularly those
             with ADHD, Autism, PTSD, and mood disorders such as depression and
             bipolar disorder. While coaching is not a substitute for therapy, I
             can provide coaching that accommodates for these identities and
@@ -71,7 +71,7 @@ const About = () => {
 
             <li>
               Owner and major contributor to community resources of The Neuro
-              Cafe, an online mutual support group for Autistic individuals on
+              Cafe, an online mutual support group for autistic individuals on
               the instant chat app Discord. You can join it{' '}
               <u>
                 <a href="https://discord.gg/3SPYDceugv">here</a>

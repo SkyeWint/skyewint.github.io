@@ -23,7 +23,7 @@ const IsUserFromTheUsCaOrAuContext =
 const IsUserFromTheUsCaOrAusProvider = ({
   children,
 }: IsUserFromTheUsCaOrAusProviderProps) => {
-  const [userCountry, setUserCountry] = useState('');
+  const [isFromAUsdCountry, setIsFromAUsdCountry] = useState(true);
 
   const fetchUserCountry = async () => {
     try {
@@ -36,7 +36,7 @@ const IsUserFromTheUsCaOrAusProvider = ({
       );
       const country = await countryResponse.text();
 
-      setUserCountry(country);
+      setIsFromAUsdCountry(COUNTRY_CODES.includes(country));
     } catch (error) {
       console.error('Error fetching user country:', error);
     }
@@ -49,7 +49,7 @@ const IsUserFromTheUsCaOrAusProvider = ({
   return (
     <IsUserFromTheUsCaOrAuContext.Provider
       value={{
-        userIsFromTheUsCaOrAus: COUNTRY_CODES.includes(userCountry),
+        userIsFromTheUsCaOrAus: isFromAUsdCountry,
       }}
     >
       {children}

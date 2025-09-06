@@ -24,12 +24,12 @@ const Home = () => {
       <section className={`w-full flex justify-center ${pink} p-6`}>
         <div className="w-3xl flex flex-col items-center">
           <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
-            Empowering People of all backgrounds to Thrive
+            Empowering People of All Backgrounds to Thrive
           </h3>
 
           <ul className="list-disc text-lg">
             <li>
-              Accommodating and empowering for LGBTQ+ and Neurodiverse people
+              Accommodating and empowering for LGBTQ+ and neurodiverse people
             </li>
             <li>Break free from unhealthy habits and living patterns</li>
             <li>Reach your goals in stable and sustainable ways</li>
@@ -48,7 +48,7 @@ const Home = () => {
               Sometimes we all just need a little push and a little support to
               get ourselves there.
             </p>
-            <p className="pb-4">I hope you can get the support you need.</p>
+            <p className="pb-4">I can be the support you need.</p>
           </em>
         </div>
       </section>
