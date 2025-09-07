@@ -1,28 +1,18 @@
 'use client';
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 interface IsUserFromTheUsCaOrAusContextProps {
   userIsFromTheUsCaOrAus: boolean;
 }
 
-interface IsUserFromTheUsCaOrAusProviderProps {
-  children?: ReactNode | ReactNode[];
-}
-
 const COUNTRY_CODES = ['US', 'CA', 'AU'];
 
 const IsUserFromTheUsCaOrAuContext =
-  createContext<IsUserFromTheUsCaOrAusContextProps>(undefined!);
+  createContext<IsUserFromTheUsCaOrAusContextProps>(null!);
 
 const IsUserFromTheUsCaOrAusProvider = ({
   children,
-}: IsUserFromTheUsCaOrAusProviderProps) => {
+}: React.PropsWithChildren) => {
   const [isFromAUsdCountry, setIsFromAUsdCountry] = useState(true);
 
   const fetchUserCountry = async () => {

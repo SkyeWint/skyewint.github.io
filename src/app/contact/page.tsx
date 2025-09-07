@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { blue, pink } from '../utils/colors';
 import { allTimezones, useTimezoneSelect } from 'react-timezone-select';
+import { sendEmail } from '../api/email';
 
 const topics = {
   execFn: {
@@ -49,7 +50,7 @@ const references = {
 type TopicName = keyof typeof topics;
 type ReferenceType = keyof typeof references;
 
-interface FormData {
+export interface ContactFormData {
   topic: TopicName;
   firstName: string;
   lastName: string;
@@ -70,7 +71,7 @@ interface FormData {
   links: string;
 }
 
-const emptyFormData: FormData = {
+const emptyContactFormData: ContactFormData = {
   topic: 'execFn',
   firstName: '',
   lastName: '',
@@ -96,7 +97,7 @@ const INPUT_FORMAT_CLASS =
   'bg-white border-pink-300 hover:border-pink-700 focus:ring-pink-500 focus:border-pink-500 transition duration-150 border-1 rounded-lg p-2';
 
 const Contact = () => {
-  const [formData, setFormData] = useState(emptyFormData);
+  const [contactFormData, setContactFormData] = useState(emptyContactFormData);
   const { options: timezones } = useTimezoneSelect({
     labelStyle: 'original',
     timezones: {
@@ -105,7 +106,7 @@ const Contact = () => {
   });
 
   const handleChange =
-    (field: keyof FormData) =>
+    (field: keyof ContactFormData) =>
     (
       event: React.ChangeEvent<
         HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -113,7 +114,7 @@ const Contact = () => {
     ) => {
       const { value } = event.target;
 
-      setFormData((data) => ({
+      setContactFormData((data) => ({
         ...data,
         [field]: value,
       }));
@@ -132,6 +133,17 @@ const Contact = () => {
   const handleChallengesChange = handleChange('challenges');
   const handleDifficultiesChange = handleChange('difficulties');
   const handleLinksChange = handleChange('links');
+
+  const handleSubmit = () => {
+    const formData = new FormData();
+
+    for (const [k, v] of Object.entries(contactFormData)) {
+      formData.set(k, v);
+    }
+
+    console.log(formData);
+    sendEmail(formData);
+  };
 
   return (
     <div className={`flex flex-col justify-center justify-items-center`}>
@@ -154,7 +166,11 @@ const Contact = () => {
         </div>
       </section>
       <section className={`w-full flex justify-center p-8 ${pink}`}>
-        <form className="w-xs lg:w-3xl sm:w-xl flex flex-col gap-5">
+        <form
+          className="w-xs lg:w-3xl sm:w-xl flex flex-col gap-5"
+          // onSubmit={handleSubmit}
+          action={handleSubmit}
+        >
           <div className={FORM_FIELD_CONTAINER_CLASS}>
             <label htmlFor="topic">
               What would you like to contact me about?
@@ -163,7 +179,7 @@ const Contact = () => {
               className={`${INPUT_FORMAT_CLASS} h-10`}
               id="topic"
               onChange={handleTopicChange}
-              value={formData.topic}
+              value={contactFormData.topic}
             >
               {Object.entries(topics).map(([topicName, topic]) => (
                 <option key={topicName} value={topicName}>
@@ -183,7 +199,7 @@ const Contact = () => {
               <input id="lastName" className={INPUT_FORMAT_CLASS} />
             </div>
 
-            {topics[formData.topic].isProgram ? (
+            {topics[contactFormData.topic].isProgram ? (
               <div className={FORM_FIELD_CONTAINER_CLASS}>
                 <label htmlFor="firstNameLegal">
                   Legal first name (if different)
@@ -209,7 +225,7 @@ const Contact = () => {
                 id="phoneCc"
                 className={`${INPUT_FORMAT_CLASS} w-12`}
                 onChange={handlePhoneCcChange}
-                value={formData.phoneCc}
+                value={contactFormData.phoneCc}
               />
 
               <div className="p-2">-</div>
@@ -218,7 +234,7 @@ const Contact = () => {
                 id="phone"
                 className={`${INPUT_FORMAT_CLASS} w-full`}
                 onChange={handlePhoneChange}
-                value={formData.phone}
+                value={contactFormData.phone}
               />
             </div>
           </div>
@@ -229,7 +245,7 @@ const Contact = () => {
               className={`${INPUT_FORMAT_CLASS} h-10`}
               id="reference"
               onChange={handleReferenceChange}
-              value={formData.reference}
+              value={contactFormData.reference}
             >
               {Object.entries(references).map(([type, label]) => (
                 <option key={type} value={type}>
@@ -239,10 +255,12 @@ const Contact = () => {
             </select>
           </div>
 
-          {['socialMedia', 'video', 'other'].includes(formData.reference) ? (
+          {['socialMedia', 'video', 'other'].includes(
+            contactFormData.reference
+          ) ? (
             <div className={FORM_FIELD_CONTAINER_CLASS}>
               <label htmlFor="referenceDetail">
-                {formData.reference === 'other'
+                {contactFormData.reference === 'other'
                   ? 'Please specify:'
                   : 'Which one?'}
               </label>
@@ -250,12 +268,12 @@ const Contact = () => {
                 className={`${INPUT_FORMAT_CLASS} h-10`}
                 id="referenceDetail"
                 onChange={handleReferenceDetailChange}
-                value={formData.referenceDetail}
+                value={contactFormData.referenceDetail}
               />
             </div>
           ) : null}
 
-          {topics[formData.topic].isProgram ? (
+          {topics[contactFormData.topic].isProgram ? (
             <>
               <div className={FORM_FIELD_CONTAINER_CLASS}>
                 <label htmlFor="timezone">Time zone*</label>
@@ -263,7 +281,7 @@ const Contact = () => {
                   id="timezone"
                   className={`${INPUT_FORMAT_CLASS} inline`}
                   onChange={handleTimezoneChange}
-                  value={formData.timezone}
+                  value={contactFormData.timezone}
                 >
                   {timezones.map((timezone) => (
                     <option key={timezone.value} value={timezone.value}>
@@ -279,7 +297,7 @@ const Contact = () => {
                   id="availability"
                   className={INPUT_FORMAT_CLASS}
                   onChange={handleAvailabilityChange}
-                  value={formData.availability}
+                  value={contactFormData.availability}
                 />
               </div>
 
@@ -291,7 +309,7 @@ const Contact = () => {
                   id="expectations"
                   className={INPUT_FORMAT_CLASS}
                   onChange={handleExpectationsChange}
-                  value={formData.expectations}
+                  value={contactFormData.expectations}
                 />
               </div>
 
@@ -303,11 +321,11 @@ const Contact = () => {
                   id="pastExperience"
                   className={INPUT_FORMAT_CLASS}
                   onChange={handlePastExperienceChange}
-                  value={formData.pastExperience}
+                  value={contactFormData.pastExperience}
                 />
               </div>
 
-              {formData.topic === 'execFn' ? (
+              {contactFormData.topic === 'execFn' ? (
                 <div className={FORM_FIELD_CONTAINER_CLASS}>
                   <label htmlFor="challenges">
                     Are there any specific executive functioning challenges you
@@ -317,12 +335,12 @@ const Contact = () => {
                     id="challenges"
                     className={INPUT_FORMAT_CLASS}
                     onChange={handleChallengesChange}
-                    value={formData.challenges}
+                    value={contactFormData.challenges}
                   />
                 </div>
               ) : null}
 
-              {formData.topic === 'flexible' ? (
+              {contactFormData.topic === 'flexible' ? (
                 <div className={FORM_FIELD_CONTAINER_CLASS}>
                   <label htmlFor="difficulties">
                     Are there any specific executive functioning challenges you
@@ -332,26 +350,26 @@ const Contact = () => {
                     id="difficulties"
                     className={INPUT_FORMAT_CLASS}
                     onChange={handleDifficultiesChange}
-                    value={formData.difficulties}
+                    value={contactFormData.difficulties}
                   />
                 </div>
               ) : null}
             </>
           ) : null}
 
-          {topics[formData.topic].isQuestion ? (
+          {topics[contactFormData.topic].isQuestion ? (
             <div className={FORM_FIELD_CONTAINER_CLASS}>
               <label htmlFor="question">What would you like to ask?*</label>
               <textarea
                 id="question"
                 className={INPUT_FORMAT_CLASS}
                 onChange={handleQuestionChange}
-                value={formData.question}
+                value={contactFormData.question}
               />
             </div>
           ) : null}
 
-          {formData.topic === 'animals' ? (
+          {contactFormData.topic === 'animals' ? (
             <div className={FORM_FIELD_CONTAINER_CLASS}>
               <label htmlFor="links">Link me the cuties!!*</label>
               <textarea
@@ -359,10 +377,12 @@ const Contact = () => {
                 className={INPUT_FORMAT_CLASS}
                 placeholder="lol"
                 onChange={handleLinksChange}
-                value={formData.links}
+                value={contactFormData.links}
               />
             </div>
           ) : null}
+
+          <button className="border-">Send message</button>
         </form>
       </section>
     </div>
