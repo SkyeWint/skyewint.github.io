@@ -161,13 +161,13 @@ const WorkWithMe = () => {
 
           <p className="pb-4">
             Do you think going through coaching with me will be good for you,
-            but you aren't quite sure how to start or want to get a sample of
-            how well we communicate in an actual session?
+            but you aren&apos;t quite sure how to start or want to get a sample
+            of how well we communicate in an actual session?
           </p>
 
           <p className="pb-4">
             No problem! This half-price intro session will involve getting to
-            know each other, going through how coaching works and what I'll
+            know each other, going through how coaching works and what I&apos;ll
             bring to the table, as well as hearing out your general struggles -
             as much as you feel willing to talk about them!
           </p>

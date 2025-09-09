@@ -4,6 +4,7 @@ import './globals.css';
 import Header from './components/navigation/header/header';
 import { blue } from './utils/colors';
 import { IsUserFromTheUsCaOrAusProvider } from './context/IsUserFromTheUsAuOrCaContext';
+import Footer from './components/navigation/footer/footer';
 
 const lexend = Lexend({
   variable: '--font-lexend',
@@ -23,7 +24,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${lexend.variable} font-[family-name:var(--font-lexend)] flex flex-col h-dvh overflow-scroll antialiased`}
+        className={`${lexend.variable} font-[family-name:var(--font-lexend)] flex flex-col h-dvh antialiased`}
       >
         <Header />
         <div className={`flex-grow ${blue}`}>
@@ -31,6 +32,7 @@ const RootLayout = ({
             {children}
           </IsUserFromTheUsCaOrAusProvider>
         </div>
+        <Footer />
       </body>
     </html>
   );

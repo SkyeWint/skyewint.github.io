@@ -31,7 +31,7 @@ const Contact = () => {
             </Link>
             !
           </div>
-          <div>I'm looking forward to hearing from you.</div>
+          <div>I&apos;m looking forward to hearing from you.</div>
         </div>
       </section>
     </div>
