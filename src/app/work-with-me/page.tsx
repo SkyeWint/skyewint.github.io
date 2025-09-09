@@ -152,6 +152,34 @@ const WorkWithMe = () => {
           </p>
         </div>
       </section>
+
+      <section className={`w-full flex justify-center ${pink} p-6`}>
+        <div className="w-3xl text-xl flex flex-col items-center">
+          <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
+            Introductory Session
+          </h3>
+
+          <p className="pb-4">
+            Do you think going through coaching with me will be good for you,
+            but you aren't quite sure how to start or want to get a sample of
+            how well we communicate in an actual session?
+          </p>
+
+          <p className="pb-4">
+            No problem! This half-price intro session will involve getting to
+            know each other, going through how coaching works and what I'll
+            bring to the table, as well as hearing out your general struggles -
+            as much as you feel willing to talk about them!
+          </p>
+
+          <p className="w-full">
+            Price:{' '}
+            <strong>
+              {userIsFromTheUsCaOrAus ? '$60 per session' : '€50 session'}
+            </strong>
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
