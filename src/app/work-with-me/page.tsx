@@ -173,10 +173,7 @@ const WorkWithMe = () => {
           </p>
 
           <p className="w-full">
-            Price:{' '}
-            <strong>
-              {userIsFromTheUsCaOrAus ? '$60 per session' : '€50 session'}
-            </strong>
+            Price: <strong>{userIsFromTheUsCaOrAus ? '$60' : '€50'}</strong>
           </p>
         </div>
       </section>
