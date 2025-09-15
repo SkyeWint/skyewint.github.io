@@ -22,9 +22,9 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
+    <html className="overflow-hidden" lang="en">
       <body
-        className={`${lexend.variable} font-[family-name:var(--font-lexend)] flex flex-col h-dvh antialiased`}
+        className={`${lexend.variable} font-[family-name:var(--font-lexend)] overflow-auto flex flex-col h-dvh antialiased`}
       >
         <Header />
         <div className={`flex-grow ${blue}`}>
