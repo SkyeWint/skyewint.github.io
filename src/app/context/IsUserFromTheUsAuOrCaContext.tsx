@@ -5,7 +5,7 @@ interface IsUserFromTheUsCaOrAusContextProps {
   userIsFromTheUsCaOrAus: boolean;
 }
 
-const COUNTRY_CODES = ['US', 'CA', 'AU'];
+const USD_COUNTRIES = ['United States', 'Canada', 'Australia'];
 
 const IsUserFromTheUsCaOrAuContext =
   createContext<IsUserFromTheUsCaOrAusContextProps>(null!);
@@ -18,15 +18,14 @@ const IsUserFromTheUsCaOrAusProvider = ({
   const fetchUserCountry = async () => {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
-      const data = await response.json();
-      const userIP = data.ip;
+      const ipData = await response.json();
+      const userIP = ipData.ip;
 
-      const countryResponse = await fetch(
-        `https://ipapi.co/${userIP}/country/`
-      );
-      const country = await countryResponse.text();
+      const countryResponse = await fetch(`https://ip.guide/${userIP}`);
+      const countryData = await countryResponse.json();
+      const country = countryData.location.country;
 
-      setIsFromAUsdCountry(COUNTRY_CODES.includes(country));
+      setIsFromAUsdCountry(USD_COUNTRIES.includes(country));
     } catch (error) {
       console.error('Error fetching user country:', error);
     }
