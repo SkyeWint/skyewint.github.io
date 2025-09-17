@@ -25,7 +25,7 @@ const Header = () => {
     return (
       <Link
         key={page.url}
-        className={`${isActivePage ? 'font-semibold' : ''} p-2`}
+        className={`${isActivePage ? 'font-semibold underline' : ''} p-2`}
         href={page.url}
         onClick={() => setIsMenuOpen(false)}
       >
@@ -42,12 +42,12 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full h-24 md:h-19 sticky z-10 top-0 left-0 right-0 bottom-20 md:static ${FILL_COLOR} ${TEXT_COLOR} ${bg}`}
+      className={`w-full h-20 md:h-19 sticky z-10 top-0 left-0 right-0 bottom-20 md:static ${FILL_COLOR} ${TEXT_COLOR} ${bg}`}
     >
       <div className="hidden md:flex w-full justify-center gap-9 p-4 ">
         {linksWithFoxy}
       </div>
-      <div className="flex md:hidden relative w-full justify-between items-center gap-9 p-2">
+      <div className="flex md:hidden relative w-full justify-between items-center gap-9 px-2">
         <HamburgerBtn
           isActive={isMenuOpen}
           onClick={() => setIsMenuOpen((open: boolean) => !open)}
@@ -57,7 +57,7 @@ const Header = () => {
         <div
           className={`${
             isMenuOpen ? '' : '-translate-x-full'
-          } transition duration-75 fixed top-24 bottom-0 left-0 right-0 p-4 ${bg} text-5xl flex flex-col gap-8`}
+          } transition duration-75 fixed top-20 bottom-0 left-0 right-0 p-4 ${bg} text-5xl flex flex-col gap-8`}
         >
           {links}
         </div>
