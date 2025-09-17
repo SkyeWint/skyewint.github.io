@@ -7,8 +7,13 @@ const Contact = () => {
       className={`flex flex-col justify-center justify-items-center text-justify`}
     >
       <section className={`w-full flex justify-center p-8 ${blue}`}>
-        <div className="w-3xl flex flex-col">
-          <div className="flex h-75 items-center justify-between bg-[url(/skyfox2.webp)] bg-no-repeat bg-size-[17rem] bg-right">
+        <div className="w-3xl">
+          <img
+            className="md:hidden m-auto pb-4"
+            src="skyfox2.webp"
+            alt="Picture of Skyfox"
+          />
+          <div className="flex md:h-75 items-center justify-between md:bg-[url(/skyfox2.webp)] bg-no-repeat bg-size-[17rem] bg-right">
             <div className="flex flex-col items-center gap-3">
               <p className="text-xl py-2">
                 Want more information about my coaching services? Any questions

@@ -5,14 +5,18 @@ import { blue, pink } from './utils/colors';
 const Home = () => {
   return (
     <div className="flex flex-col justify-center justify-items-center">
-      <section className={`w-full flex justify-center p-8 ${blue}`}>
+      <section className={`w-full flex justify-center md:p-8 ${blue}`}>
         <div className="flex flex-col">
-          <div className="flex h-75 items-center bg-[url(/skyfox.webp)] bg-no-repeat bg-size-[17rem] bg-left">
-            <div className="md:w-sm lg:w-2xs shrink-0">&nbsp;</div>
-            <div className="flex flex-col text-center items-center gap-3">
-              <h1 className="text-[9rem] leading-[9rem] font-normal">Skyfox</h1>
+          <div className="flex h-125 md:h-75 relative items-center bg-[url(/skyfox.webp)] bg-no-repeat md:bg-size-[17rem] bg-center md:bg-left bg-cover">
+            <div className="hidden md:block md:w-sm lg:w-2xs shrink-0">
+              &nbsp;
+            </div>
+            <div className="z-1 flex flex-col drop-shadow-md drop-shadow-black md:drop-shadow-none text-center text-white md:text-sky-950 items-center gap-35 md:gap-3">
+              <h1 className="text-8xl md:text-[9rem] leading-[9rem] font-normal">
+                Skyfox
+              </h1>
 
-              <div className="w-md flex flex-col items-center">
+              <div className="md:w-md flex flex-col items-center">
                 <h2 className="text-4xl font-light tracking-wider py-2">
                   Personal Development & Coaching
                 </h2>
@@ -27,7 +31,7 @@ const Home = () => {
             Empowering People of All Backgrounds to Thrive
           </h3>
 
-          <ul className="list-disc text-lg">
+          <ul className="list-disc text-lg p-2 md:p-0">
             <li>
               Accommodating and empowering for LGBTQ+ and neurodiverse people
             </li>
@@ -52,7 +56,9 @@ const Home = () => {
           </em>
         </div>
       </section>
-      <section className={`w-full flex justify-center p-8 ${blue}`}>
+      <section
+        className={`w-full flex flex-col md:flex-row justify-center p-8 ${blue}`}
+      >
         <HeroCard
           href={pages.about.url}
           imgUrl="/pic-in-frame-320.webp"

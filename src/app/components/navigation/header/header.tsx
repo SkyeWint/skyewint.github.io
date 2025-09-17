@@ -42,14 +42,13 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full h-24 md:h-19 sticky z-1 top-0 left-0 right-0 bottom-20 md:static ${FILL_COLOR} ${TEXT_COLOR} ${bg}`}
+      className={`w-full h-24 md:h-19 sticky z-10 top-0 left-0 right-0 bottom-20 md:static ${FILL_COLOR} ${TEXT_COLOR} ${bg}`}
     >
       <div className="hidden md:flex w-full justify-center gap-9 p-4 ">
         {linksWithFoxy}
       </div>
       <div className="flex md:hidden relative w-full justify-between items-center gap-9 p-2">
         <HamburgerBtn
-          className="z-1"
           isActive={isMenuOpen}
           onClick={() => setIsMenuOpen((open: boolean) => !open)}
         />

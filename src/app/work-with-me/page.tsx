@@ -40,7 +40,7 @@ const WorkWithMe = () => {
             Basic details for coaching sessions:
           </h3>
 
-          <ul className="list-disc text-lg">
+          <ul className="list-disc text-lg p-2 md:p-0">
             <li>
               {userIsFromTheUsCaOrAus
                 ? 'I provide coaching to clients in the US in addition to other countries, from my home in the Netherlands.'

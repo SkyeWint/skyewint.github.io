@@ -10,7 +10,7 @@ interface HereCardProps {
 
 const HeroCard = ({ href, imgUrl, text, pink = false }: HereCardProps) => (
   <Link href={href}>
-    <div className="w-[360px] mx-10 text-center text-2xl font-medium">
+    <div className="max-w-[360px] mx-10 text-center text-2xl font-medium">
       <div
         className={`${
           pink ? 'hue-rotate-300' : 'hue-rotate-160'
@@ -19,7 +19,7 @@ const HeroCard = ({ href, imgUrl, text, pink = false }: HereCardProps) => (
         <img className="sepia" alt="" src={imgUrl} width={360} height={360} />
       </div>
 
-      <BowSvg className="m-auto scale-y-70 fill-sky-900" width={300} />
+      <BowSvg className="w-full max-w-[360px] m-auto scale-y-70 fill-sky-900" />
 
       <div className="text-center">{text}</div>
     </div>

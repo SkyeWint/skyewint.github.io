@@ -6,8 +6,13 @@ const About = () => {
       className={`flex flex-col justify-center justify-items-center text-justify`}
     >
       <section className={`w-full flex justify-center p-8 ${blue}`}>
-        <div className="w-3xl flex flex-col">
-          <div className="flex h-75 items-center justify-between bg-[url(/skyfox2.webp)] bg-no-repeat bg-size-[17rem] bg-right">
+        <div className="w-3xl">
+          <img
+            className="md:hidden m-auto pb-4"
+            src="skyfox2.webp"
+            alt="Picture of Skyfox"
+          />
+          <div className="flex md:h-75 items-center justify-between md:bg-[url(/skyfox2.webp)] bg-no-repeat bg-size-[17rem] bg-right">
             <div className="flex flex-col items-center gap-3">
               <h2 className="text-4xl text-center font-semibold">My values</h2>
 
@@ -63,7 +68,7 @@ const About = () => {
             of my experience:
           </p>
 
-          <ul className="list-disc text-lg">
+          <ul className="list-disc text-lg p-2 md:p-0">
             <li>
               Direct service provider for individuals with developmental and
               intellectual disabilities at Independent Environments Inc.
