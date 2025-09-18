@@ -111,7 +111,7 @@ const WorkWithMe = () => {
             <strong>
               {userIsFromTheUsCaOrAus
                 ? '$1200 ($100 per session)'
-                : '€1000 ($83.33 per session)'}
+                : '€1000 (€83.33 per session)'}
             </strong>
           </p>
         </div>
