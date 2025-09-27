@@ -21,9 +21,19 @@ const IsUserFromTheUsCaOrAusProvider = ({
       const ipData = await response.json();
       const userIP = ipData.ip;
 
-      const countryResponse = await fetch(`https://ip.guide/${userIP}`);
-      const countryData = await countryResponse.json();
-      const country = countryData.location.country;
+      let country = 'USA'; // US defaultism because of course
+      try {
+        const countryResponse = await fetch(`https://ip.guide/${userIP}`);
+        const countryData = await countryResponse.json();
+        country = countryData.location.country;
+      } catch {
+        //Fallback
+        const countryResponse = await fetch(
+          `https://free.freeipapi.com/api/json/${userIP}`
+        );
+        const countryData = await countryResponse.json();
+        country = countryData.countryName;
+      }
 
       setIsFromAUsdCountry(USD_COUNTRIES.includes(country));
     } catch (error) {
