@@ -78,6 +78,33 @@ const WorkWithMe = () => {
       </section>
 
       <section className={`w-full flex justify-center ${pink} p-6`}>
+        <div className="w-3xl text-xl flex flex-col gap-4">
+          <h3 className="text-3xl text-center font-semibold tracking-wide">
+            Introductory Session
+          </h3>
+
+          <p>
+            Do you think going through coaching with me will be good for you,
+            but you still feel a little unsure after the free consultation?
+          </p>
+
+          <p>
+            No problem! This half-price intro session will involve reviewing the
+            coaching contract, getting to know each other more, and going over
+            any unanswered questions you have about coaching with me. If you
+            have any personal questions about me, this is a perfect time to ask!
+          </p>
+
+          <p>
+            Otherwise, if there&apos;s time after we get through everything
+            else, we will also talk about the struggles you&apos;re having and
+            specific support you need in more detail so that I can draw up a
+            general plan for future sessions.
+          </p>
+        </div>
+      </section>
+
+      <section className={`w-full flex justify-center ${blue} p-6`}>
         <div className="w-3xl text-xl flex flex-col items-center">
           <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
             Addressing Executive Functioning Challenges
@@ -110,14 +137,14 @@ const WorkWithMe = () => {
             Program price:{' '}
             <strong>
               {userIsFromTheUsCaOrAus
-                ? '$1000 ($100 per session)'
-                : '€800 (€80 per session)'}
+                ? '$1000 ($83.33 per session)'
+                : '€800 (€66.66 per session)'}
             </strong>
           </p>
         </div>
       </section>
 
-      <section className={`w-full flex justify-center ${blue} p-6`}>
+      <section className={`w-full flex justify-center ${pink} p-6`}>
         <div className="w-3xl text-xl flex flex-col items-center">
           <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
             Flexible Coaching Appointments & Continued Support
@@ -140,7 +167,7 @@ const WorkWithMe = () => {
           <p className="w-full pb-4">
             Per-session price:{' '}
             <strong>
-              {userIsFromTheUsCaOrAus ? '$120' : '€100'} per session
+              {userIsFromTheUsCaOrAus ? '$100' : '€80'} per session
             </strong>
           </p>
 
@@ -149,31 +176,6 @@ const WorkWithMe = () => {
             help. My coaching is available for you any time, offering lived
             experience, effective techniques, and empathetic support to help you
             live your best life!
-          </p>
-        </div>
-      </section>
-
-      <section className={`w-full flex justify-center ${pink} p-6`}>
-        <div className="w-3xl text-xl flex flex-col gap-4">
-          <h3 className="text-3xl text-center font-semibold tracking-wide">
-            Introductory Session
-          </h3>
-
-          <p>
-            Do you think going through coaching with me will be good for you,
-            but you aren&apos;t quite sure how to start or want to get a sample
-            of how well we communicate in an actual session?
-          </p>
-
-          <p>
-            No problem! This half-price intro session will involve getting to
-            know each other, going through how coaching works and what I&apos;ll
-            bring to the table, as well as hearing out your general struggles -
-            as much as you feel willing to talk about them!
-          </p>
-
-          <p>
-            Price: <strong>{userIsFromTheUsCaOrAus ? '$50' : '€40'}</strong>
           </p>
         </div>
       </section>
