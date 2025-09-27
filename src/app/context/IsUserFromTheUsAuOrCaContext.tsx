@@ -21,7 +21,7 @@ const IsUserFromTheUsCaOrAusProvider = ({
       const ipData = await response.json();
       const userIP = ipData.ip;
 
-      let country = 'USA'; // US defaultism because of course
+      let country = '';
       try {
         const countryResponse = await fetch(`https://ip.guide/${userIP}`);
         const countryData = await countryResponse.json();
