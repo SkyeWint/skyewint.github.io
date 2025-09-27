@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full h-20 md:h-19 sticky z-10 top-0 left-0 right-0 bottom-20 md:static ${FILL_COLOR} ${TEXT_COLOR} ${bg}`}
+      className={`w-full h-20 md:h-19 sticky z-10 top-0 left-0 right-0 bottom-20 ${FILL_COLOR} ${TEXT_COLOR} ${bg}`}
     >
       <div className="hidden md:flex w-full justify-center gap-9 p-4 ">
         {linksWithFoxy}
