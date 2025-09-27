@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import HeroCard from '../components/common/heroCard';
 import pages from '../components/navigation/pages';
 import { useIsUserFromTheUsCaOrAusContext } from '../context/IsUserFromTheUsAuOrCaContext';
@@ -15,7 +16,7 @@ const WorkWithMe = () => {
         </div>
       </section>
 
-      <section className={`w-full flex justify-center ${blue} p-6`}>
+      <section className={`w-full flex justify-center ${pink} p-6`}>
         <div className="w-3xl flex flex-col items-center text-xl">
           <p className="pb-4">
             Coaching is a relationship built on teamwork. We meet regularly
@@ -30,6 +31,26 @@ const WorkWithMe = () => {
             through coaching with me will be a place for you to better
             understand yourself and build confidence in how you approach the
             world.
+          </p>
+        </div>
+      </section>
+
+      <section className={`w-full flex justify-center ${blue} p-6`}>
+        <div className="w-3xl flex flex-col items-center text-xl gap-4">
+          <p>
+            Before we start any formal coaching arrangement, we will have an
+            initial 15-minute call via phone or online in order to see if we
+            will be a good fit.
+          </p>
+
+          <p>
+            If you are curious about coaching but are uncertain if it is worth
+            it or want to make sure we get along, this consultation has no
+            commitment and no strings attached. Simply{' '}
+            <Link href="/contact">
+              <u>contact me</u>
+            </Link>{' '}
+            and we&apos;ll set up a time!
           </p>
         </div>
       </section>
@@ -100,6 +121,10 @@ const WorkWithMe = () => {
             else, we will also talk about the struggles you&apos;re having and
             specific support you need in more detail so that I can draw up a
             general plan for future sessions.
+          </p>
+
+          <p>
+            Price: <strong>{userIsFromTheUsCaOrAus ? '$50' : '€40'}</strong>
           </p>
         </div>
       </section>
