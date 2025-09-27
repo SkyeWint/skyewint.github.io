@@ -110,8 +110,8 @@ const WorkWithMe = () => {
             Program price:{' '}
             <strong>
               {userIsFromTheUsCaOrAus
-                ? '$1200 ($100 per session)'
-                : '€1000 (€83.33 per session)'}
+                ? '$1000 ($100 per session)'
+                : '€800 (€80 per session)'}
             </strong>
           </p>
         </div>
@@ -154,26 +154,36 @@ const WorkWithMe = () => {
       </section>
 
       <section className={`w-full flex justify-center ${pink} p-6`}>
-        <div className="w-3xl text-xl flex flex-col items-center">
-          <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
+        <div className="w-3xl text-xl flex flex-col gap-4">
+          <h3 className="text-3xl text-center font-semibold tracking-wide">
             Introductory Session
           </h3>
 
-          <p className="pb-4">
+          <p>
             Do you think going through coaching with me will be good for you,
             but you aren&apos;t quite sure how to start or want to get a sample
             of how well we communicate in an actual session?
           </p>
 
-          <p className="pb-4">
+          <p>
             No problem! This half-price intro session will involve getting to
             know each other, going through how coaching works and what I&apos;ll
             bring to the table, as well as hearing out your general struggles -
             as much as you feel willing to talk about them!
           </p>
 
-          <p className="w-full">
-            Price: <strong>{userIsFromTheUsCaOrAus ? '$60' : '€50'}</strong>
+          <p>
+            Price: <strong>{userIsFromTheUsCaOrAus ? '$50' : '€40'}</strong>
+          </p>
+        </div>
+      </section>
+
+      <section className={`w-full flex justify-center ${blue} p-6`}>
+        <div className="w-3xl text-xl flex flex-col gap-4">
+          <p>
+            Struggling too much financially? Ask me about reduced price coaching
+            when you contact me and we can talk about it. If I can fit you into
+            my schedule, I&apos;m happy to help.
           </p>
         </div>
       </section>
