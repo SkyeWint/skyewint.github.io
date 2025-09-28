@@ -36,26 +36,6 @@ const WorkWithMe = () => {
       </section>
 
       <section className={`w-full flex justify-center ${blue} p-6`}>
-        <div className="w-3xl flex flex-col items-center text-xl gap-4">
-          <p>
-            Before we start any formal coaching arrangement, we will have an
-            initial 15-minute call via phone or online in order to see if we
-            will be a good fit.
-          </p>
-
-          <p>
-            If you are curious about coaching but are uncertain if it is worth
-            it or want to make sure we get along, this consultation has no
-            commitment and no strings attached. Simply{' '}
-            <Link href="/contact">
-              <u>contact me</u>
-            </Link>{' '}
-            and we&apos;ll set up a time!
-          </p>
-        </div>
-      </section>
-
-      <section className={`w-full flex justify-center ${pink} p-6`}>
         <div className="w-3xl flex flex-col items-center">
           <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
             Basic details for coaching sessions:
@@ -77,25 +57,54 @@ const WorkWithMe = () => {
         </div>
       </section>
 
-      <section className={`w-full flex justify-center ${blue} p-6`}>
+      <section className={`w-full flex justify-center ${pink} p-6`}>
         <div className="w-3xl flex flex-col items-center">
-          <h3 className="text-3xl text-center font-semibold tracking-wide pb-4">
+          <h3 className="text-3xl text-center font-semibold tracking-wide">
             Ready to start your journey?
           </h3>
-          <p className="text-xl tracking-wide pb-4">
+          {/* <p className="text-xl tracking-wide pb-4">
             Please complete the intake questions on the contact page thoroughly.
             I will personally review your responses and consider how I can best
             assist you.
-          </p>
+          </p> */}
         </div>
       </section>
 
-      <section className={`w-full flex justify-center p-8 ${blue}`}>
+      <section className={`w-full flex justify-center p-8 ${pink}`}>
         <HeroCard
           href={pages.contact.url}
           imgUrl="/journey-320.webp"
           text="Book your first coaching session now!"
+          pink
         />
+      </section>
+
+      <section className={`w-full flex justify-center ${blue} p-6`}>
+        <div className="w-3xl flex flex-col items-center text-xl gap-4">
+          <h3 className="text-3xl text-center font-semibold tracking-wide">
+            Initial Consultation
+          </h3>
+
+          <p>
+            Before we start any formal coaching arrangement, we will have an
+            initial 15-minute call via phone or online in order to see if we
+            will be a good fit.
+          </p>
+
+          <p>
+            If you are curious about coaching but are uncertain if it is worth
+            it or want to make sure we get along, this consultation has no
+            commitment and no strings attached. Simply{' '}
+            <Link href="/contact">
+              <u>contact me</u>
+            </Link>{' '}
+            and we&apos;ll set up a time!
+          </p>
+
+          <p>
+            Price: <strong>Free</strong>
+          </p>
+        </div>
       </section>
 
       <section className={`w-full flex justify-center ${pink} p-6`}>
