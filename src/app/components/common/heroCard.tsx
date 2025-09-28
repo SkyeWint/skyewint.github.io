@@ -13,7 +13,7 @@ const HeroCard = ({ href, imgUrl, text, pink = false }: HereCardProps) => (
     <div className="max-w-[360px] mx-10 text-center text-2xl font-medium">
       <div
         className={`${
-          pink ? 'hue-rotate-300' : 'hue-rotate-160'
+          pink ? 'hue-rotate-285' : 'hue-rotate-160'
         } saturate-60 contrast-95 opacity-80`}
       >
         <img className="sepia" alt="" src={imgUrl} width={360} height={360} />
