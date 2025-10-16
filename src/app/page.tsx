@@ -7,7 +7,7 @@ const Home = () => {
     <div className="flex flex-col justify-center justify-items-center">
       <section className={`w-full flex justify-center md:p-8 ${blue}`}>
         <div className="flex flex-col">
-          <div className="flex h-125 md:h-75 relative items-center bg-[url(/skyfox.webp)] bg-no-repeat md:bg-size-[17rem] bg-center md:bg-left bg-cover">
+          <div className="flex h-125 md:h-75 relative items-center bg-[url(/skyfox3.webp)] bg-no-repeat md:bg-size-[17rem] bg-center md:bg-left bg-cover">
             <div className="hidden md:block md:w-sm lg:w-2xs shrink-0">
               &nbsp;
             </div>

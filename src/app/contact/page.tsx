@@ -10,10 +10,10 @@ const Contact = () => {
         <div className="w-3xl">
           <img
             className="md:hidden m-auto pb-4"
-            src="skyfox2.webp"
+            src="skyfox.webp"
             alt="Picture of Skyfox"
           />
-          <div className="flex md:h-75 items-center justify-between md:bg-[url(/skyfox2.webp)] bg-no-repeat bg-size-[17rem] bg-right">
+          <div className="flex md:h-75 items-center justify-between md:bg-[url(/skyfox.webp)] bg-no-repeat bg-size-[17rem] bg-right">
             <div className="flex flex-col items-center gap-3">
               <p className="text-xl py-2">
                 Want more information about my coaching services? Any questions
