@@ -35,9 +35,11 @@ const Header = () => {
   });
 
   const linksWithFoxy = [
-    ...links.slice(0, links.length / 2),
+    // ...links.slice(0, links.length / 2),
+    // foxy,
+    // ...links.slice(links.length / 2),
     foxy,
-    links.slice(links.length / 2),
+    ...links,
   ];
 
   return (

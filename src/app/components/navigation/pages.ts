@@ -15,6 +15,10 @@ const pages = {
     url: '/contact',
     name: 'Contact',
   },
+  blog: {
+    url: 'https://blog.skyfoxcoaching.com/',
+    name: 'Blog',
+  },
 };
 
 export default pages;
